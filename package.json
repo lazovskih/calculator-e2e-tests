@@ -1,0 +1,14 @@
+{
+  "name": "calculator-e2e-tests",
+  "version": "1.0.0",
+  "description": "Calculator e2e tests",
+  "scripts": {
+    "test": "npx cypress run",
+    "test:open": "npx cypress open"
+  },
+  "author": "Lazovskih",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^14.3.2"
+  }
+}
