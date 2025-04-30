@@ -1,4 +1,4 @@
-export class SearchPage {
+export class CalculatorPage {
   constructor() {
     // Generate number buttons dynamically as object properties
     for (let i = 0; i < this.buttons.length; i += 2) {
@@ -16,14 +16,26 @@ export class SearchPage {
    */
   getButton(arg) {
     if (isNaN(Number(arg))) {
-      arg = arg === '.' ? 'decimal' : arg === '-' ? 'negateButton' : arg; // Handle negative/decimal case
+      // Handle negative/decimal/equals buttons
+      switch (arg) {
+        case ".":
+          arg = "decimal";
+          break;
+        case "-":
+          arg = "negateButton";
+          break;
+        case "equal":
+          arg = "calculate";
+          break;
+        default:
+          break;
+      }
       return Object.values(this).find((prop) => prop.name === arg)?.locator;
-    } else {  
+    } else {
       return Object.values(this).find((prop) => prop.value === arg)?.locator;
     }
   }
   url = "https://www.theonlinecalculator.com/";
-  //   buttons = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero"]; // DEBUG
   buttons = [
     "zero",
     "0",
@@ -60,7 +72,7 @@ export class SearchPage {
     "clearButton",
     "AC",
     "negateButton",
-    "+/-"
+    "+/-",
   ];
 
   results = {

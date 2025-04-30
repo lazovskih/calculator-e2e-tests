@@ -1,12 +1,10 @@
-import { SearchPage } from "../PageObjects/SearchPageAlternative2.js";
-const currentPage = new SearchPage();
+import { CalculatorPage } from "../PageObjects/CalculatorPage.js";
+const currentPage = new CalculatorPage();
 beforeEach(() => {
-  const url = currentPage.url; //Cypress.env("baseUrl");
+  const url = currentPage.url; 
   cy.visit(url);
-  // cy.log("-------- currenPage", JSON.stringify(currentPage));
 });
 context("1. Initialization and UI Tests", () => {
-// describe("1. Initialization and UI Tests", () => {
   it("1.1 Validate the default state of the calculator upon load.", () => {
     for (const key in currentPage) {
       if (currentPage.hasOwnProperty(key) && currentPage[key].locator) {
@@ -22,15 +20,15 @@ context("1. Initialization and UI Tests", () => {
       if (currentPage.hasOwnProperty(key) && Number(currentPage[key].value)) {
         cy.log(`Verified display: ${key} shows value ${currentPage[key].value}`);
         cy.get(currentPage[key].locator).first().click();
-        
+
         // Check if the display shows the correct value
-        cy.get(currentPage.results.locator).should("have.value", currentPage[key].value); 
-        
+        cy.get(currentPage.results.locator).scrollIntoView().should("have.value", currentPage[key].value);
+
         // Clear the display after each button press
-        cy.get(currentPage.button_clearButton.locator).click(); 
-        
+        cy.get(currentPage.button_clearButton.locator).click();
+
         // Check if the display is cleared
-        cy.get(currentPage.results.locator).should("have.value", ""); 
+        cy.get(currentPage.results.locator).scrollIntoView().should("have.value", "");
       }
     }
   });
@@ -43,7 +41,7 @@ context("1. Initialization and UI Tests", () => {
         round++;
         cy.get(currentPage[key].locator).first().click();
         cy.get(currentPage.button_decimal.locator).first().click(); // Click the decimal button
-        
+
         // Append dot to the current value if it is first time. If not, append the value without dot.
         if (round == 1) {
           currentValue += currentPage[key].value + ".";
@@ -52,39 +50,58 @@ context("1. Initialization and UI Tests", () => {
         }
 
         cy.log(`Verified display: ${key} shows value ${currentValue}`);
-        
+
         // Check if the display shows the correct value
-        cy.get(currentPage.results.locator).should("have.value", currentValue); 
+        cy.get(currentPage.results.locator).scrollIntoView().should("have.value", currentValue);
       }
     }
   });
-  it.only("1.4 Validate how the calculator handles leading zeros.", () => {
-        cy.log(`Verified display: ${key} shows value ${currentPage[key].value}`);
-        const testValue = '00007.001';
-        const numKeys = testValue.split("");
-        cy.log("numKeys: ", numKeys); // DEBUG
-        for (let j = 0; j < numKeys.length; j++) {
-          cy.log("numKeys[j]: ", numKeys[j]); // DEBUG
-          buttonLocator = currentPage.getButton(numKeys[j]);
-          // Click the number/decimal button
-          cy.get(buttonLocator).first().click();
-        }
-        
-        // Check if the display shows the correct value
-        cy.get(currentPage.results.locator).should("have.value", "7.001"); 
-  });
-  it("1.5 Check that pressing “CE” button clears display", () => {
-    let currentValue = "";
-    for (const key in currentPage) {
-      if (currentPage.hasOwnProperty(key) && key.includes("button") && !isNaN(currentPage[key].value)) {
-        cy.get(currentPage[key].locator).first().click();
-        currentValue += currentPage[key].value;
-      }
-      // Clear the display
-      cy.get(currentPage.button_clearButton.locator).click(); 
-      
-      // Check if the display shows the correct value
-      cy.get(currentPage.results.locator).should("have.value", ""); 
+
+  it("1.4 Validate how the calculator handles leading zeros.", () => {
+    const testValue = "00007.001";
+    const numKeys = testValue.split("");
+    for (let j = 0; j < numKeys.length; j++) {
+      const buttonLocator = currentPage.getButton(numKeys[j]);
+      // Click the number/decimal button
+      cy.get(buttonLocator).first().click();
     }
+
+    // Check if the display shows the correct value
+    cy.get(currentPage.results.locator).scrollIntoView().should("have.value", "7.001");
+  });
+
+  it("1.5 Verify  that pressing “CE” button clears current entry", () => {
+    const testValueA = "881";
+    const numKeysA = testValueA.split("");
+    for (let j = 0; j < numKeysA.length; j++) {
+      const buttonLocator = currentPage.getButton(numKeysA[j]);
+      // Click the number/decimal button
+      cy.get(buttonLocator).first().click();
+    }
+    cy.get(currentPage.button_add.locator).first().click();
+
+    // Check if the display shows the correct value
+    cy.get(currentPage.results.locator).scrollIntoView().should("have.value", "881");
+
+    const testValueB = "19";
+    const numKeysB = testValueB.split("");
+    for (let j = 0; j < numKeysB.length; j++) {
+      const buttonLocator = currentPage.getButton(numKeysB[j]);
+      // Click the number/decimal button
+      cy.get(buttonLocator).first().click();
+    }
+
+    // Clear the display
+    cy.get(currentPage.button_clearButton.locator).click();
+    const testValueC = "119";
+    const numKeysC = testValueC.split("");
+    for (let j = 0; j < numKeysC.length; j++) {
+      const buttonLocator = currentPage.getButton(numKeysC[j]);
+      // Click the number/decimal button
+      cy.get(buttonLocator).first().click();
+    }
+    cy.get(currentPage.button_calculate.locator).first().click();
+    // Check if the display shows the correct value
+    cy.get(currentPage.results.locator).scrollIntoView().should("have.value", "1,000");
   });
 });

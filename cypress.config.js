@@ -11,6 +11,5 @@ module.exports = defineConfig({
   env: {
     baseUrl: 'https://www.google.com',
   },
-  viewportWidth: 2400,
-  viewportHeight: 1200,
+  scrollBehavior: false
 });

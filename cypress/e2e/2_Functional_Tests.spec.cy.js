@@ -1,9 +1,8 @@
-import { SearchPage } from "../PageObjects/SearchPageAlternative2.js";
+import { CalculatorPage } from "../PageObjects/CalculatorPage.js";
 import TestData from "../fixtures/TestData.json";
-// import TestData from "../fixtures/TestDataOne.json"; // DEBUG
-const currentPage = new SearchPage();
+const currentPage = new CalculatorPage();
 beforeEach(() => {
-  const url = currentPage.url; //Cypress.env("baseUrl"); // DEBUG OR CHANGE TO CONFIG
+  const url = currentPage.url;
   cy.visit(url);
 });
 
@@ -12,16 +11,14 @@ context("2.	Functional Tests", () => {
   for (let n = 0; n < TestData.length; n++) {
     const operation = TestData[n].operation;
     const dataValues = TestData[n].dataValues;
-    describe(`2.${n + 1} Verify operation "${operation}" of ${dataValues} values.`, () => {
+    describe(`2.${n + 1} Verify "${operation}" operation with${dataValues}.`, () => {
       // Iterate through all test cases in the test set
       const testCases = TestData[n].testCases;
       for (let test = 0; test < testCases.length; test++) {
         // Get the args from the test set
         const args = testCases[test].args;
         const expectedResult = testCases[test].result;
-        it.only(`2.${n + 1}.${test + 1} Validate correct results "${operation}" of ${dataValues} values.`, () => {
-          cy.log("testCases[test].args: ", testCases[test].args); // DEBUG
-
+        it.only(`2.${n + 1}.${test + 1} Validate correct results of "${operation}" for ${dataValues}.`, () => {
           // Iterate through all args in set
           for (let i = 0; i < args.length; i++) {
             let buttonLocator;
@@ -38,9 +35,7 @@ context("2.	Functional Tests", () => {
                 numKeys.shift();
                 numKeys.push("-");
               }
-              cy.log("numKeys: ", numKeys); // DEBUG
               for (let j = 0; j < numKeys.length; j++) {
-                cy.log("numKeys[j]: ", numKeys[j]); // DEBUG
                 buttonLocator = currentPage.getButton(numKeys[j]);
                 // Click the number/decimal button
                 cy.get(buttonLocator).first().click();
@@ -50,14 +45,14 @@ context("2.	Functional Tests", () => {
           }
           // Click the "equal" button
           cy.get(currentPage.button_calculate.locator).click();
+          // Get the result from the display
           cy.get(currentPage.results.locator)
             .scrollIntoView()
             .invoke("val")
             .then((actualResult) => {
-              // Get the result from the display
-              cy.log("-------- expectedResult:", expectedResult, " actualResult: ", actualResult); // DEBUG
-              // Check if the result is correct
-              expect(expectedResult, "Confirmed result is valid").to.equal(actualResult);
+              // Confirm actual result is equal to expected result
+              expect(expectedResult, "Confirmed actual result is equal to expected result").to.equal(actualResult);
+              cy.wait(1000); // Wait for 1 second before clearing the display
             });
         });
       }
