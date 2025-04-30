@@ -1,0 +1,13 @@
+[
+  {
+    "operation": "subtract",
+    "dataValues": "decimal",
+    "testCases": [
+    
+      {
+        "args": ["1.2", "subtract", "2.3"],
+        "result": "3.5"
+      }
+    ]
+  }
+]
