@@ -1,7 +1,7 @@
 import { CalculatorPage } from "../PageObjects/CalculatorPage.js";
 const currentPage = new CalculatorPage();
 beforeEach(() => {
-  const url = currentPage.url; 
+  const url = Cypress.env("baseUrl"); 
   cy.visit(url);
 });
 context("1. Initialization and UI Tests", () => {

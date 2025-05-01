@@ -35,7 +35,6 @@ export class CalculatorPage {
       return Object.values(this).find((prop) => prop.value === arg)?.locator;
     }
   }
-  url = "https://www.theonlinecalculator.com/";
   buttons = [
     "zero",
     "0",
