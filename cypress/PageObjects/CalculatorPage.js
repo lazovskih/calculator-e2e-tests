@@ -22,6 +22,7 @@ export class CalculatorPage {
     return Object.values(this).find((prop) => prop.value === arg)?.locator;
   }
   /**
+   * Clicks the buttons on the calculator based on the provided string.
    * @param {string} buttons - string with button values
    * @returns undefined
    */

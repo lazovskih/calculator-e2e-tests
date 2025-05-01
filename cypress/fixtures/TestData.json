@@ -1,7 +1,7 @@
 [
   {
     "operation": "add (sum)",
-    "dataValues": "with integers & decimals",
+    "dataValues": "with integers & decimal",
     "testCases": [
       {
         "args": ["1", "+", "2"],
@@ -43,7 +43,7 @@
   },
   {
     "operation": "cumulative add (sum)",
-    "dataValues": "with integers & decimals",
+    "dataValues": "with integers & decimal",
     "testCases": [
       {
         "args": ["110", "+", "120", "+", "130", "+", "140", "+", "150"],
@@ -57,7 +57,7 @@
   },
   {
     "operation": "subtract",
-    "dataValues": "with integers & decimals",
+    "dataValues": "with integers & decimal",
     "testCases": [
       {
         "args": ["111111", "−", "100000"],
@@ -87,7 +87,7 @@
   },
   {
     "operation": "cumulative subtract",
-    "dataValues": "with integers & decimals",
+    "dataValues": "with integers & decimal",
     "testCases": [
       {
         "args": ["110", "−", "120", "−", "130", "−", "140", "−", "150"],
@@ -101,7 +101,7 @@
   },
   {
     "operation": "multiply",
-    "dataValues": "with positive integers & decimals",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["111111", "×", "100000"],
@@ -131,7 +131,7 @@
   },
   {
     "operation": "multiply",
-    "dataValues": "with negative integers & decimals",
+    "dataValues": "with negative integers & decimal",
     "testCases": [
       {
         "args": ["1", "×", "-1"],
@@ -157,7 +157,7 @@
   },
   {
     "operation": "cumulative multiply",
-    "dataValues": "with positive integers & decimals",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["110", "×", "120", "×", "130", "×", "140", "×", "150"],
@@ -171,7 +171,7 @@
   },
   {
     "operation": "cumulative multiply",
-    "dataValues": "with negative integers & decimals",
+    "dataValues": "with negative integers & decimal",
     "testCases": [
       {
         "args": ["11", "×", "-22", "×", "33", "×", "44", "×", "55"],
@@ -185,7 +185,7 @@
   },
   {
     "operation": "divide",
-    "dataValues": "with positive integers & decimals",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["256", "÷", "32"],
@@ -215,7 +215,7 @@
   },
   {
     "operation": "divide",
-    "dataValues": "with negative integers & decimals",
+    "dataValues": "with negative integers & decimal",
     "testCases": [
       {
         "args": ["32", "÷", "-8"],
@@ -245,7 +245,7 @@
   },
   {
     "operation": "cumulative divide",
-    "dataValues": "with positive integers & decimals",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["11", "÷", "22", "÷", "33", "÷", "44", "÷", "55"],
@@ -259,7 +259,7 @@
   },
   {
     "operation": "cumulative divide",
-    "dataValues": "with negative integers & decimals",
+    "dataValues": "with negative integers & decimal",
     "testCases": [
       {
         "args": ["11", "÷", "-22", "÷", "33", "÷", "44", "÷", "55"],
@@ -293,7 +293,7 @@
   },
   {
     "operation": "Multiple cumulative operations",
-    "dataValues": "with positive & negative integers & decimals",
+    "dataValues": "with positive & negative integers & decimal",
     "testCases": [
       {
         "args": ["11", "+", "22", "÷", "33", "−", "10", "×", "11"],
@@ -311,7 +311,7 @@
   },
   {
     "operation": "Multiple cumulative with equal operation",
-    "dataValues": "with positive & negative integers & decimals",
+    "dataValues": "with positive & negative integers & decimal",
     "testCases": [
       {
         "args": ["11", "+", "22", "÷", "33", "−", "10", "×", "11", "=", "+", "99"],

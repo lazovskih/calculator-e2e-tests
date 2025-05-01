@@ -4,13 +4,12 @@
   "description": "Calculator e2e tests",
   "scripts": {
     "test": "npx cypress run",
-    "test:open": "npx cypress open",
+    "cy:open": "npx cypress open",
     "cy:open:chrome": "npx cypress open --e2e --browser chrome",
     "cy:open:firefox": "npx cypress open --e2e --browser firefox",
     "cy:open:edge": "npx cypress open --e2e --browser edge",
     "cy:run:chrome": "cypress run --browser=chrome",
     "cy:run:firefox": "cypress run --browser=firefox",
-    "e2e:chrome": "cypress run --browser chrome"
   },
   "author": "Lazovskih",
   "license": "MIT",
