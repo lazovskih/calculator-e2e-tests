@@ -16,63 +16,26 @@ export class CalculatorPage {
    */
   getButton(arg) {
     if (isNaN(Number(arg))) {
-      // Handle negative/decimal/equals buttons
-      switch (arg) {
-        case ".":
-          arg = "decimal";
-          break;
-        case "-":
-          arg = "negateButton";
-          break;
-        case "equal":
-          arg = "calculate";
-          break;
-        default:
-          break;
-      }
-      return Object.values(this).find((prop) => prop.name === arg)?.locator;
-    } else {
-      return Object.values(this).find((prop) => prop.value === arg)?.locator;
+      // Handle negative button
+      arg = arg == "!" ? "+/-" : arg;
+    }
+    return Object.values(this).find((prop) => prop.value === arg)?.locator;
+  }
+  /**
+   * @param {string} buttons - string with button values
+   * @returns undefined
+   */
+  clickButtons(buttons) {
+    const buttonsArr = buttons.split("");
+    for (let i = 0; i < buttonsArr.length; i++) {
+      const buttonLocator = this.getButton(buttonsArr[i]);
+      // Click the button
+      cy.get(buttonLocator).first().click();
     }
   }
-  buttons = [
-    "zero",
-    "0",
-    "one",
-    "1",
-    "two",
-    "2",
-    "three",
-    "3",
-    "four",
-    "4",
-    "five",
-    "5",
-    "six",
-    "6",
-    "seven",
-    "7",
-    "eight",
-    "8",
-    "nine",
-    "9",
-    "decimal",
-    ".",
-    "add",
-    "+",
-    "subtract",
-    "−",
-    "multiply",
-    "×",
-    "divide",
-    "÷",
-    "calculate",
-    "=",
-    "clearButton",
-    "AC",
-    "negateButton",
-    "+/-",
-  ];
+  buttons = [ "zero", "0", "one", "1", "two", "2", "three", "3", "four", "4", "five", "5",
+    "six", "6", "seven", "7", "eight", "8", "nine", "9", "decimal", ".", "add", "+", "subtract", "−",
+    "multiply", "×", "divide", "÷", "calculate", "=", "clearButton", "AC", "negateButton", "+/-" ];
 
   results = {
     locator: "input[name='display']",

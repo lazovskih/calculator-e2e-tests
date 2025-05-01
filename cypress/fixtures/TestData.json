@@ -1,348 +1,348 @@
 [
   {
     "operation": "add (sum)",
-    "dataValues": " integers & decimals",
+    "dataValues": "with integers & decimals",
     "testCases": [
       {
-        "args": ["1", "add", "2"],
+        "args": ["1", "+", "2"],
         "result": "3"
       },
       {
-        "args": ["10", "add", "20"],
+        "args": ["10", "+", "20"],
         "result": "30"
       },
       {
-        "args": ["100", "add", "200"],
+        "args": ["100", "+", "200"],
         "result": "300"
       },
       {
-        "args": ["10000000", "add", "20000000"],
+        "args": ["10000000", "+", "20000000"],
         "result": "30,000,000"
       },
       {
-        "args": ["1000000000000000", "add", "2000000000000000"],
+        "args": ["1000000000000000", "+", "2000000000000000"],
         "result": "3,000,000,000,000,000"
       },
       {
-        "args": ["0.0000002", "add", "2.3"],
+        "args": ["0.0000002", "+", "2.3"],
         "result": "2.3000002"
       },
       {
-        "args": ["0.0002", "add", "0.0002"],
+        "args": ["0.0002", "+", "0.0002"],
         "result": "0.0004"
       },
       {
-        "args": ["1.2", "add", "2.3"],
+        "args": ["1.2", "+", "2.3"],
         "result": "3.5"
       },
       {
-        "args": ["1.23456789", "add", "2.3456789"],
+        "args": ["1.23456789", "+", "2.3456789"],
         "result": "3.58024679"
       }
     ]
   },
   {
     "operation": "cumulative add (sum)",
-    "dataValues": " integers & decimals",
+    "dataValues": "with integers & decimals",
     "testCases": [
       {
-        "args": ["110", "add", "120", "add", "130", "add", "140", "add", "150"],
+        "args": ["110", "+", "120", "+", "130", "+", "140", "+", "150"],
         "result": "650"
       },
       {
-        "args": ["2.1", "add", "2.2", "add", "2.3", "add", "2.4"],
+        "args": ["2.1", "+", "2.2", "+", "2.3", "+", "2.4"],
         "result": "9"
       }
     ]
   },
   {
     "operation": "subtract",
-    "dataValues": " integers & decimals",
+    "dataValues": "with integers & decimals",
     "testCases": [
       {
-        "args": ["111111", "subtract", "100000"],
+        "args": ["111111", "−", "100000"],
         "result": "11,111"
       },
       {
-        "args": ["10", "subtract", "11"],
+        "args": ["10", "−", "11"],
         "result": "-1"
       },
       {
-        "args": ["3000000000", "subtract", "2000000000"],
+        "args": ["3000000000", "−", "2000000000"],
         "result": "1,000,000,000"
       },
       {
-        "args": ["1.2", "subtract", "2.3"],
+        "args": ["1.2", "−", "2.3"],
         "result": "-1.1"
       },
       {
-        "args": ["0.0002", "subtract", "0.0002"],
+        "args": ["0.0002", "−", "0.0002"],
         "result": "0"
       },
       {
-        "args": ["0.0004", "subtract", "0.0002"],
+        "args": ["0.0004", "−", "0.0002"],
         "result": "0.0002"
       }
     ]
   },
   {
     "operation": "cumulative subtract",
-    "dataValues": " integers & decimals",
+    "dataValues": "with integers & decimals",
     "testCases": [
       {
-        "args": ["110", "subtract", "120", "subtract", "130", "subtract", "140", "subtract", "150"],
+        "args": ["110", "−", "120", "−", "130", "−", "140", "−", "150"],
         "result": "-430"
       },
       {
-        "args": ["2.1", "subtract", "2.2", "subtract", "2.3", "subtract", "2.4"],
+        "args": ["2.1", "−", "2.2", "−", "2.3", "−", "2.4"],
         "result": "-4.8"
       }
     ]
   },
   {
     "operation": "multiply",
-    "dataValues": " positive integers & decimals",
+    "dataValues": "with positive integers & decimals",
     "testCases": [
       {
-        "args": ["111111", "multiply", "100000"],
+        "args": ["111111", "×", "100000"],
         "result": "11,111,100,000"
       },
       {
-        "args": ["10", "multiply", "11"],
+        "args": ["10", "×", "11"],
         "result": "110"
       },
       {
-        "args": ["1234567890", "multiply", "1234567890"],
+        "args": ["1234567890", "×", "1234567890"],
         "result": "1,524,157,875,019,052,000"
       },
       {
-        "args": ["1.2", "multiply", "2.3"],
+        "args": ["1.2", "×", "2.3"],
         "result": "2.76"
       },
       {
-        "args": ["0.02", "multiply", "0.02"],
+        "args": ["0.02", "×", "0.02"],
         "result": "0.0004"
       },
       {
-        "args": ["10", "multiply", "0.01"],
+        "args": ["10", "×", "0.01"],
         "result": "0.1"
       }
     ]
   },
   {
     "operation": "multiply",
-    "dataValues": " negative integers & decimals",
+    "dataValues": "with negative integers & decimals",
     "testCases": [
       {
-        "args": ["1", "multiply", "-1"],
+        "args": ["1", "×", "-1"],
         "result": "-1"
       },
       {
-        "args": ["-10", "multiply", "-10"],
+        "args": ["-10", "×", "-10"],
         "result": "100"
       },
       {
-        "args": ["-1.2", "multiply", "-2.3"],
+        "args": ["-1.2", "×", "-2.3"],
         "result": "2.76"
       },
       {
-        "args": ["-0.02", "multiply", "0.02"],
+        "args": ["-0.02", "×", "0.02"],
         "result": "-0.0004"
       },
       {
-        "args": ["10", "multiply", "-0.01"],
+        "args": ["10", "×", "-0.01"],
         "result": "-0.1"
       }
     ]
   },
   {
     "operation": "cumulative multiply",
-    "dataValues": " positive integers & decimals",
+    "dataValues": "with positive integers & decimals",
     "testCases": [
       {
-        "args": ["110", "multiply", "120", "multiply", "130", "multiply", "140", "multiply", "150"],
+        "args": ["110", "×", "120", "×", "130", "×", "140", "×", "150"],
         "result": "36,036,000,000"
       },
       {
-        "args": ["2.1", "multiply", "2.2", "multiply", "2.3", "multiply", "2.4"],
+        "args": ["2.1", "×", "2.2", "×", "2.3", "×", "2.4"],
         "result": "25.5024"
       }
     ]
   },
   {
     "operation": "cumulative multiply",
-    "dataValues": " negative integers & decimals",
+    "dataValues": "with negative integers & decimals",
     "testCases": [
       {
-        "args": ["11", "multiply", "-22", "multiply", "33", "multiply", "44", "multiply", "55"],
+        "args": ["11", "×", "-22", "×", "33", "×", "44", "×", "55"],
         "result": "-19,326,120"
       },
       {
-        "args": ["-2.01", "multiply", "2.02", "multiply", "2.03", "multiply", "-2.04"],
+        "args": ["-2.01", "×", "2.02", "×", "2.03", "×", "-2.04"],
         "result": "16.81410024"
       }
     ]
   },
   {
     "operation": "divide",
-    "dataValues": " positive integers & decimals",
+    "dataValues": "with positive integers & decimals",
     "testCases": [
       {
-        "args": ["256", "divide", "32"],
+        "args": ["256", "÷", "32"],
         "result": "8"
       },
       {
-        "args": ["1000000", "divide", "333"],
+        "args": ["1000000", "÷", "333"],
         "result": "3,003.003003003"
       },
       {
-        "args": ["879", "divide", "2"],
+        "args": ["879", "÷", "2"],
         "result": "439.5"
       },
       {
-        "args": ["1.2", "divide", "2.3"],
+        "args": ["1.2", "÷", "2.3"],
         "result": "0.5217391304"
       },
       {
-        "args": ["0.02", "divide", "0.02"],
+        "args": ["0.02", "÷", "0.02"],
         "result": "1"
       },
       {
-        "args": ["10", "divide", "0.01"],
+        "args": ["10", "÷", "0.01"],
         "result": "1,000"
       }
     ]
   },
   {
     "operation": "divide",
-    "dataValues": " negative integers & decimals",
+    "dataValues": "with negative integers & decimals",
     "testCases": [
       {
-        "args": ["32", "divide", "-8"],
+        "args": ["32", "÷", "-8"],
         "result": "-4"
       },
       {
-        "args": ["-1000000", "divide", "-333"],
+        "args": ["-1000000", "÷", "-333"],
         "result": "3,003.003003003"
       },
       {
-        "args": ["-879", "divide", "2"],
+        "args": ["-879", "÷", "2"],
         "result": "-439.5"
       },
       {
-        "args": ["-1.2", "divide", "-2.3"],
+        "args": ["-1.2", "÷", "-2.3"],
         "result": "0.5217391304"
       },
       {
-        "args": ["-0.02", "divide", "0.02"],
+        "args": ["-0.02", "÷", "0.02"],
         "result": "-1"
       },
       {
-        "args": ["10", "divide", "-0.01"],
+        "args": ["10", "÷", "-0.01"],
         "result": "-1,000"
       }
     ]
   },
   {
     "operation": "cumulative divide",
-    "dataValues": " positive integers & decimals",
+    "dataValues": "with positive integers & decimals",
     "testCases": [
       {
-        "args": ["11", "divide", "22", "divide", "33", "divide", "44", "divide", "55"],
+        "args": ["11", "÷", "22", "÷", "33", "÷", "44", "÷", "55"],
         "result": "0.000006261"
       },
       {
-        "args": ["2.01", "divide", "2.02", "divide", "2.03", "divide", "2.04"],
+        "args": ["2.01", "÷", "2.02", "÷", "2.03", "÷", "2.04"],
         "result": "0.2402804755"
       }
     ]
   },
   {
     "operation": "cumulative divide",
-    "dataValues": " negative integers & decimals",
+    "dataValues": "with negative integers & decimals",
     "testCases": [
       {
-        "args": ["11", "divide", "-22", "divide", "33", "divide", "44", "divide", "55"],
+        "args": ["11", "÷", "-22", "÷", "33", "÷", "44", "÷", "55"],
         "result": "-0.000006261"
       },
       {
-        "args": ["-2.01", "divide", "2.02", "divide", "2.03", "divide", "-2.04"],
+        "args": ["-2.01", "÷", "2.02", "÷", "2.03", "÷", "-2.04"],
         "result": "0.2402804755"
       }
     ]
   },
   {
     "operation": "invalid divide ",
-    "dataValues": " 'by zero'",
+    "dataValues": "with 'by zero'",
     "testCases": [
       {
-        "args": ["256", "divide", "0"],
+        "args": ["256", "÷", "0"],
         "result": "Not a Number"
       }
     ]
   },
   {
     "operation": "cumulative operations with invalid divide",
-    "dataValues": " 'by zero'",
+    "dataValues": "with 'by zero'",
     "testCases": [
       {
-        "args": ["-2.01", "multiply", "2.02", "add", "2.03", "divide", "0"],
+        "args": ["-2.01", "×", "2.02", "+", "2.03", "÷", "0"],
         "result": "Not a Number"
       }
     ]
   },
   {
     "operation": "Multiple cumulative operations",
-    "dataValues": " positive & negative integers & decimals",
+    "dataValues": "with positive & negative integers & decimals",
     "testCases": [
       {
-        "args": ["11", "add", "22", "divide", "33", "subtract", "10", "multiply", "11"],
+        "args": ["11", "+", "22", "÷", "33", "−", "10", "×", "11"],
         "result": "-99"
       },
       {
-        "args": ["22", "divide", "11", "add", "44", "multiply", "10", "subtract", "1"],
+        "args": ["22", "÷", "11", "+", "44", "×", "10", "−", "1"],
         "result": "459"
       },
       {
-        "args": ["-33", "divide", "3", "add", "-44", "multiply", "10", "subtract", "1"],
+        "args": ["-33", "÷", "3", "+", "-44", "×", "10", "−", "1"],
         "result": "-551"
       }
     ]
   },
   {
     "operation": "Multiple cumulative with equal operation",
-    "dataValues": " positive & negative integers & decimals",
+    "dataValues": "with positive & negative integers & decimals",
     "testCases": [
       {
-        "args": ["11", "add", "22", "divide", "33", "subtract", "10", "multiply", "11", "equal", "add", "99"],
+        "args": ["11", "+", "22", "÷", "33", "−", "10", "×", "11", "=", "+", "99"],
         "result": "0"
       },
       {
-        "args": ["22", "divide", "11", "add", "44", "multiply", "10", "subtract", "1", "equal", "subtract", "459"],
+        "args": ["22", "÷", "11", "+", "44", "×", "10", "−", "1", "=", "−", "459"],
         "result": "0"
       },
       {
-        "args": ["-33", "divide", "3", "add", "-44", "multiply", "10", "subtract", "1", "equal", "add", "551"],
+        "args": ["-33", "÷", "3", "+", "-44", "×", "10", "−", "1", "=", "+", "551"],
         "result": "0"
       }
     ]
   },
   {
     "operation": "Multiple operation result to last operand",
-    "dataValues": " positive integers",
+    "dataValues": "with positive integers",
     "testCases": [
       {
-        "args": ["11", "add", "subtract", "multiply", "divide", "33"],
+        "args": ["11", "+", "−", "×", "÷", "33"],
         "result": "0.3333333333"
       }
     ]
   },
   {
     "operation": "Multiple operations",
-    "dataValues": "out proper arguments",
+    "dataValues": "not proper arguments",
     "testCases": [
       {
-        "args": ["add", "subtract", "multiply", "11", "divide", "add", "subtract"],
+        "args": ["+", "−", "×", "11", "÷", "+", "−"],
         "result": "11"
       }
     ]
