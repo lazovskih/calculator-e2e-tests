@@ -59,8 +59,9 @@ yarn-error.log*
 node_modules/
 jspm_packages/
 
-# Video recording directories
+# Video recording and screenshots directories
 videos/
+screenshots/
 
 # Optional npm cache directory
 .npm

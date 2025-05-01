@@ -1,7 +1,7 @@
 [
   {
     "operation": "add (sum)",
-    "dataValues": "with integers & decimal",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["1", "+", "2"],
@@ -42,8 +42,42 @@
     ]
   },
   {
+    "operation": "add (sum)",
+    "dataValues": "with negative integers & decimal",
+    "testCases": [
+      {
+        "args": ["1", "+", "-2"],
+        "result": "-1"
+      },
+      {
+        "args": ["10", "+", "-20"],
+        "result": "-10"
+      },
+      {
+        "args": ["-100", "+", "200"],
+        "result": "100"
+      },
+      {
+        "args": ["-1000000000000000", "+", "2000000000000000"],
+        "result": "1,000,000,000,000,000"
+      },
+      {
+        "args": ["-0.0000002", "+", "2.3"],
+        "result": "2.2999998"
+      },
+      {
+        "args": ["-0.0002", "+", "-0.0002"],
+        "result": "-0.0004"
+      },
+      {
+        "args": ["-1.2", "+", "-2.3"],
+        "result": "-3.5"
+      }
+    ]
+  },
+  {
     "operation": "cumulative add (sum)",
-    "dataValues": "with integers & decimal",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["110", "+", "120", "+", "130", "+", "140", "+", "150"],
@@ -56,8 +90,22 @@
     ]
   },
   {
+    "operation": "cumulative add (sum)",
+    "dataValues": "with negative integers & decimal",
+    "testCases": [
+      {
+        "args": ["110", "+", "120", "+", "-130", "+", "140", "+", "-150"],
+        "result": "90"
+      },
+      {
+        "args": ["-2.1", "+", "-2.2", "+", "-2.3", "+", "-2.4"],
+        "result": "-9"
+      }
+    ]
+  },
+  {
     "operation": "subtract",
-    "dataValues": "with integers & decimal",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["111111", "−", "100000"],
@@ -86,8 +134,34 @@
     ]
   },
   {
+    "operation": "subtract",
+    "dataValues": "with negative integers & decimal",
+    "testCases": [
+      {
+        "args": ["-111111", "−", "100000"],
+        "result": "-211,111"
+      },
+      {
+        "args": ["10", "−", "-11"],
+        "result": "21"
+      },
+      {
+        "args": ["-3000000000", "−", "2000000000"],
+        "result": "-5,000,000,000"
+      },
+      {
+        "args": ["-1.2", "−", "-2.3"],
+        "result": "1.1"
+      },
+      {
+        "args": ["0.0002", "−", "-0.0002"],
+        "result": "0.0004"
+      }
+    ]
+  },
+  {
     "operation": "cumulative subtract",
-    "dataValues": "with integers & decimal",
+    "dataValues": "with positive integers & decimal",
     "testCases": [
       {
         "args": ["110", "−", "120", "−", "130", "−", "140", "−", "150"],
@@ -96,6 +170,20 @@
       {
         "args": ["2.1", "−", "2.2", "−", "2.3", "−", "2.4"],
         "result": "-4.8"
+      }
+    ]
+  },
+  {
+    "operation": "cumulative subtract",
+    "dataValues": "with negative integers & decimal",
+    "testCases": [
+      {
+        "args": ["110", "−", "120", "−", "-130", "−", "140", "−", "-150"],
+        "result": "130"
+      },
+      {
+        "args": ["-2.1", "−", "2.2", "−", "2.3", "−", "-2.4"],
+        "result": "-4.2"
       }
     ]
   },
@@ -273,7 +361,7 @@
   },
   {
     "operation": "invalid divide ",
-    "dataValues": "with 'by zero'",
+    "dataValues": "with 'zero' as devizor",
     "testCases": [
       {
         "args": ["256", "÷", "0"],
@@ -283,7 +371,7 @@
   },
   {
     "operation": "cumulative operations with invalid divide",
-    "dataValues": "with 'by zero'",
+    "dataValues": "with 'zero' as devizor",
     "testCases": [
       {
         "args": ["-2.01", "×", "2.02", "+", "2.03", "÷", "0"],
@@ -339,7 +427,7 @@
   },
   {
     "operation": "Multiple operations",
-    "dataValues": "not proper arguments",
+    "dataValues": "with not complete arguments",
     "testCases": [
       {
         "args": ["+", "−", "×", "11", "÷", "+", "−"],

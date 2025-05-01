@@ -14,7 +14,7 @@ context("2.	Functional Tests", () => {
     const operation = TestData[n].operation;
     const dataValues = TestData[n].dataValues;
 
-    describe(`2.${n + 1} By clicks: Verify "${operation}" operation ${dataValues} values.`, () => {
+    describe(`2.${n + 1} Verify "${operation}" operation ${dataValues} values.`, () => {
       // Iterate through all test cases in the test set
       const testCases = TestData[n].testCases;
 
